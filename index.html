@@ -1,65 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Credit Calculator</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h1>Credit calculator</h1>
-    <div class="main">
-      <div class="main-calculation">
-        <div class="calculation-input">
-          <label for="amount">Сума кредиту:</label>
-          <input
-            type="number"
-            id="amount"
-            min="1000"
-            max="50000"
-            step="100"
-            value="1000"
-          />
-          <input
-            type="range"
-            id="amount-slider"
-            min="1000"
-            max="50000"
-            step="100"
-            value="1000"
-          />
-          <div class="error">
-            <p class="error-message">It is not correction</p>
-          </div>
-        </div>
 
-        <div class="calculation-input">
-          <label for="term">Період погашення (днів):</label>
-          <input type="number" id="term" min="7" max="60" step="1" value="7" />
-          <input
-            type="range"
-            id="term-slider"
-            min="7"
-            max="60"
-            step="1"
-            value="7"
-          />
-          <div class="error">
-            <p class="error-message">It is not correction</p>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credit Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <h1>Credit calculator</h1>
+  <div class="main">
+    <div class="main-calculation">
+      <div class="calculation-input">
+        <label for="amount">Сума кредиту:</label>
+        <input type="number" id="amount" min="1000" max="50000" step="100" value="1000" />
+        <input type="range" id="amount-slider" min="1000" max="50000" step="100" value="1000" />
+        <div class="error">
+          <p class="error-message" id="amountError"></p>
         </div>
       </div>
-      <div class="main-result">
-        <h2>Сума щоденного погашення</h2>
-        <p id="daily-repayment">1232</p>
-        <h2>Загальну суму погашення.</h2>
-        <p id="total-repayment">1232</p>
-      </div>
 
-      <button class="calculation-btn" onclick="clickBtn()">
-        Отримати кредит
-      </button>
+      <div class="calculation-input">
+        <label for="term">Період погашення (днів):</label>
+        <input type="number" id="term" min="7" max="60" step="1" value="7" />
+        <input type="range" id="term-slider" min="7" max="60" step="1" value="7" />
+        <div class="error">
+          <p class="error-message" id="termError"></p>
+        </div>
+      </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <div class="main-result">
+      <h2>Сума щоденного погашення</h2>
+      <p id="daily-repayment"></p>
+      <h2>Загальну суму погашення.</h2>
+      <p id="total-repayment"></p>
+    </div>
+
+    <button class="calculation-btn" id="submitBtn" onclick="clickBtn()">
+      Отримати кредит
+    </button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

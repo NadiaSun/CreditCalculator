@@ -58,7 +58,6 @@ body {
   
   
   .error {
-    display: none;
     color: red;
     font-size: 14px;
   }
